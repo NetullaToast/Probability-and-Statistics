@@ -17,6 +17,7 @@
 同理，$F(b,c)-F(a,c)=P(X\leq b, Y\leq c)-P(X\leq a, Y\leq c)=P(a<X\leq b,Y\leq c)$
 
 所以，
+
 $$
 \begin{align}
 F(b,d)-F(a,d)-F(b,c)+F(a,c)&=(F(b,d)-F(a,d))-(F(b,c)-F(a,c))\\&=P(a<X\leq b,Y\leq d)-P(a<X\leq b, Y\leq c)\\&=P(a<X\leq b,c<Y\leq d)
@@ -26,6 +27,7 @@ $$
 #### Q3
 
 (1) $(X,Y)$ 的概率密度函数为 
+
 $$
 f_{X,Y}(x,y)=\left
 \{
@@ -35,7 +37,6 @@ f_{X,Y}(x,y)=\left
 \end{align}
 \right.
 $$
-
 
 (2) $X$ 的边际分布的概率密度函数为 $f_X(x)=\int_{-\infty}^{+\infty}f_{X,Y}(x,y)dy=\int_{x^2+y^2\leq 1}\dfrac{dy}{\pi}=\dfrac{2}{\pi}\int_0^{\sqrt{1-x^2}}dy=\dfrac{2\sqrt{1-x^2}}{\pi},0\leq x\leq 1$
 
@@ -48,28 +49,33 @@ $$
 #### Q4
 
 对于二元正态分布 $(X,Y)\sim N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)$，有
+
 $$
 \begin{align}
 f(x,y)&=
 \dfrac{1}{2\pi \sigma_1\sigma_2}\dfrac{1}{\sqrt{1-\rho^2}}e^{-\frac{1}{2(1-\rho^2)}((\frac{x-\mu_1}{\sigma_1})^2+(\frac{y-\mu_2}{\sigma_2})^2-2\rho\frac{x-\mu_1}{\sigma_1}\frac{y-\mu_2}{\sigma_2})}\\&=
 \dfrac{1}{2\pi \sigma_1\sigma_2}\dfrac{1}{\sqrt{1-\rho^2}}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}e^{-\frac{1}{2(1-\rho^2)}(\frac{y-\mu_2}{\sigma_2}-\rho\frac{x-\mu_1}{\sigma_1})^2}\end{align}
 $$
+
 换元，令 $t=\frac{y-\mu_2}{\sigma_2}-\rho\frac{x-\mu_1}{\sigma_1}$，则
 $$
+
 \begin{align}
 f_X(x)&=\int_{-\infty}^{+\infty}f(x,y)dy\\&=\dfrac{1}{2\pi \sigma_1\sigma_2}\dfrac{1}{\sqrt{1-\rho^2}}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}\int_{-\infty}^{+\infty}\sigma_2e^{-\frac{1}{2(1-\rho^2)}t^2}dt\\&=\dfrac{1}{2\pi \sigma_1\sigma_2}\dfrac{1}{\sqrt{1-\rho^2}}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}\sigma_2\sqrt{2\pi (1-\rho^2)}\\&=\dfrac{1}{\sqrt{2\pi}\sigma_1}e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}
 \end{align}
 $$
+
 同理，$f_Y(y)=\dfrac{1}{\sqrt{2\pi}\sigma_2}e^{-\frac{(y-\mu_2)^2}{2\sigma_2^2}}$
 
 #### Q5
 
 对于二元正态分布 $(X,Y)\sim N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)$，有
+
 $$
 f_{X|Y}(x|y)=\dfrac{f(x,y)}{f_Y(y)}=\dfrac{\dfrac{1}{2\pi \sigma_1\sigma_2}\dfrac{1}{\sqrt{1-\rho^2}}e^{-\frac{1}{2(1-\rho^2)}((\frac{x-\mu_1}{\sigma_1})^2+(\frac{y-\mu_2}{\sigma_2})^2-2\rho\frac{x-\mu_1}{\sigma_1}\frac{y-\mu_2}{\sigma_2})}}{\dfrac{1}{\sqrt{2\pi}\sigma_2}e^{-\frac{(y-\mu_2)^2}{2\sigma_2^2}}}
-
 =\dfrac{1}{\sqrt{2\pi}\sigma_1}\dfrac{1}{\sqrt{1-\rho^2}}e^{-\frac{1}{2(1-\rho^2)}(\frac{x-\mu_1}{\sigma_1}-\rho\frac{y-\mu_2}{\sigma_2})^2}
 $$
+
 同理，$f_{Y|X}(y|x)=\dfrac{1}{\sqrt{2\pi}\sigma_2}\dfrac{1}{\sqrt{1-\rho^2}}e^{-\frac{1}{2(1-\rho^2)}(\frac{y-\mu_2}{\sigma_2}-\rho\frac{x-\mu_1}{\sigma_1})^2}$
 
 #### Q6
@@ -83,17 +89,21 @@ $$
 #### Q7
 
 (1) 由于随机变量 $X_1,X_2$ 相互独立，所以
+
 $$
 P(X_1=x_1)=\dfrac{\lambda_1^{x_1}e^{-\lambda_1}}{x_1!}\\
 P(X_1+X_2=n)=\dfrac{(\lambda_1+\lambda_2)^{n}e^{-(\lambda_1+\lambda_2)}}{n!}\\
 P(X_1=x_1,X_1+X_2=n)=P(X_1=x_1)P(X_2=n-x_1)=\dfrac{\lambda_1^{x_1}e^{-\lambda_1}}{x_1!}\dfrac{\lambda_2^{n-x_1}e^{-\lambda_2}}{(n-x_1)!}
 $$
+
 于是
+
 $$
 \begin{align}
 P(X_1=x_1|X_1+X_2=n)&=\dfrac{P(X_1=x_1,X_1+X_2=n)}{P(X_1+X_2=n)}\\&=\dfrac{\dfrac{\lambda_1^{x_1}e^{-\lambda_1}}{x_1!}\dfrac{\lambda_2^{n-x_1}e^{-\lambda_2}}{(n-x_1)!}}{\dfrac{(\lambda_1+\lambda_2)^{n}e^{-(\lambda_1+\lambda_2)}}{n!}}\\&=\dfrac{n!}{x_1(n-x_1)!}{(\dfrac{\lambda_1}{\lambda_1+\lambda_2})}^{x_1}{(1-\dfrac{\lambda_1}{\lambda_1+\lambda_2})}^{n-x_1}
 \end{align}
 $$
+
 因此 $(X_1|X_1+X_2=n)\sim B(n,\dfrac{\lambda_1}{\lambda_1+\lambda_2})$ 
 
 (2) 假设某节课上有**足够多的**若干男生和若干女生，且男生来上课的人数和女生来上课的人数相互独立，那么若已知该课共来了 $n $ 个人，则来的男生的人数呈二项分布。
@@ -101,6 +111,7 @@ $$
 #### Q8
 
 (1) 记甲、乙到达时间分别为 $X,Y$，则 $X,Y\sim U(1,2)$。
+
 $$
 f_{X,Y}(x,y)=\left
 \{
@@ -110,7 +121,9 @@ f_{X,Y}(x,y)=\left
 \end{align}
 \right.
 $$
+
 (2) 根据题意，有
+
 $$
 \begin{align}
 P(|X-Y|>\dfrac{1}{6})=\iint_{1\leq x,y\leq 2,|x-y|>\frac{1}{6}}f_{X,Y}(x,y)dxdy=\dfrac{25}{36}
@@ -128,29 +141,38 @@ $H_1(x,y)=xy(1-(1-x)(1-y)),H_2(x,y)=xy(1+(1-x)(1-y))$
 #### Q10
 
 构造函数 $H(x,y)=C(F(x),G(y))$，则
+
 $$
 \lim_{x\rightarrow+\infty}H(x,y)=\lim_{x\rightarrow+\infty}C(F(x),G(y))=C(1,G(y))=G(y)
 $$
+
 同理，$\lim_{y\rightarrow+\infty}H(x,y)=F(x)$
 
 #### Q11
 
 当 $X,Y$ 都离散时，
+
 $$
 P(X=x_i)=\sum_{j}P(Y=y_j)P(X=x_i|Y=y_j)\\
 P(Y=y_j|X=x_i)=\dfrac{P(Y=y_j)P(X=x_i|Y=y_j)}{\sum_{j}P(Y=y_j)P(X=x_i|Y=y_j)}
 $$
+
 当 $X$ 离散，$Y$ 连续时，记 $Y$ 在 $X=x_i$ 条件下的条件 PDF 为 $f_{Y|X}(y|x_i)$，则
+
 $$
 P(X=x_i)=\int_{-\infty}^{+\infty}f_Y(y)P(X=x_i|Y=y)dy\\
 f_{Y|X}(y|x_i)=\dfrac{f_Y(y)P(X=x_i|Y=y)}{\int_{-\infty}^{+\infty}f_Y(y)P(X=x_i|Y=y)dy}
 $$
+
 当 $X$ 连续，$Y$ 离散时，记 $Y$ 在 $X=x$ 条件下的条件 PMF 为 $P(Y=y_i|X=x)$，则
+
 $$
 f_X(x)=\sum_iP(Y=y_i)f_{X|Y}(x|y_i)\\
 P(Y=y_i|X=x)=\dfrac{P(Y=y_i)f_{X|Y}(x|y_i)}{\sum_iP(Y=y_i)f_{X|Y}(x|y_i)}
 $$
+
 当 $X,Y$ 都连续时，
+
 $$
 f_X(x)=\int_{-\infty}^{+\infty}f_{X|Y}(x|y)f_Y(y)dy\\
 f_{Y|X}(y|x)=\frac{f_{X|Y}(x|y)f_Y(y)}{\int_{-\infty}^{+\infty}f_{X|Y}(x|y)f_Y(y)dy}

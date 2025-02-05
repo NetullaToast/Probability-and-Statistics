@@ -37,6 +37,7 @@
 因此 $f(x;a,\sigma)$ 满足概率密度的归一化要求。
 
 (2) $\bar X\approx\int_{\mathbb R}xf(x;a,\sigma)dx=\int_{\mathbb R}(2a-x)f(x;a,\sigma)dx=2a-\int_{\mathbb R}xf(x;a,\sigma)dx$，因此 $\hat a\approx\bar X$，于是
+
 $$
 \begin{align}
 m_2\approx&\int_{\mathbb R}(x-a)^2f(x;a,\sigma)dx\\
@@ -48,6 +49,7 @@ m_2\approx&\int_{\mathbb R}(x-a)^2f(x;a,\sigma)dx\\
 &=3\sigma^2
 \end{align}
 $$
+
 因此 $\hat{\sigma^2}=\dfrac13m^2$
 
 (3) $L(\theta)=\prod_{i=1}^{n}f(X_i;a,\sigma)={(\sqrt{2\pi}\sigma^3)}^{-n}\prod_{i=1}^{n}(x_i-a)^2e^{-\tfrac{\sum_{i=1}^{n}(X_i-a)^2}{2\sigma^2}}$

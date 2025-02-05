@@ -79,10 +79,10 @@ $$
 
 $$
 \begin{align}
-Var(X)=&\sum_i(x_i-E(X))^2p_i\\
-=&\sum_ix_i^2p_i-2E(X)\sum_ix_ip_i+E^2(X)\sum_ip_i\\
-=&E(X^2)-2E^2(X)+E^2(X)\\
-=&E(X^2)-E^2(X)
+Var(X)&=\sum_i(x_i-E(X))^2p_i\\
+&=\sum_ix_i^2p_i-2E(X)\sum_ix_ip_i+E^2(X)\sum_ip_i\\
+&=E(X^2)-2E^2(X)+E^2(X)\\
+&=E(X^2)-E^2(X)
 \end{align}
 $$
 
@@ -147,7 +147,9 @@ E(X^2)&=\sum_{k=0}^{n}k^2\tbinom{n}{k}p^k{(1-p)}^{n-k}\\
 &=np{(1-p)}^{n-1}+n(\sum_{k=2}^{n}(k-1)\tbinom{n-1}{k-1}p^k{(1-p)}^{n-k}+\sum_{k=2}^{n}\tbinom{n-1}{k-1}p^k{(1-p)}^{n-k})\\
 &=np{(1-p)}^{n-1}+n(\sum_{k=2}^{n}(n-1)\tbinom{n-2}{k-2}p^k{(1-p)}^{n-k}+\sum_{k=1}^{n}\tbinom{n-1}{k-1}p^k{(1-p)}^{n-k}-p{(1-p)}^{n-1})\\
 &=np{(1-p)}^{n-1}+n((n-1)p^2(p+1-p)^{n-2}+p(p+1-p)^{n-1}-p{(1-p)}^{n-1})\\
-&=np(1-p)+n^2p^2\\Var(X)&=E(X^2)-E^2(X)\\&=np(1-p)
+&=np(1-p)+n^2p^2\\
+Var(X)&=E(X^2)-E^2(X)\\
+&=np(1-p)
 \end{align}
 $$
 

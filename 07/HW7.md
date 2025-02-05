@@ -21,6 +21,7 @@ $X$ 的众数是 $9$，$Y$ 的众数是 $9$
 #### Q2
 
 (1) 记 $X\sim Exp(1)$ ，则 $E(X)=4,Var(X)=1$
+
 $$
 Skew(X)=E((X-1)^3)=\int_0^{+\infty}(x-1)^3e^{-x}dx=-(x^2+3x+2)e^{-x}\bigg|_0^{+\infty}=2\\
 Kurt(X)=E((X-1)^4)=\int_0^{+\infty}(x-1)^4e^{-x}dx=-(x^4+6x^2+8x+9)e^{-x}\bigg|_0^{+\infty}=9
@@ -34,24 +35,30 @@ Kurt(Y)=\frac1 {16} E((Y-4)^4)=\frac1 {16}\sum_{k=0}^{+\infty}(k-4)^4\dfrac{4^ke
 $$
 
 记 $Z\sim U(0,1)$ ，则 $E(Z)=\dfrac 1 2,Var(Z)=\dfrac1 {12}$
+
 $$
 Skew(Z)=\dfrac {E((Z-\frac1 2)^3)}{\left(\frac1{12}\right)^{\frac3 2}}=12^{\frac3 2}\int_0^1(z-\frac1 2)^3dz=0\\
 Kurt(Z)=\dfrac{E((Z-\frac1 2)^4)}{\left(\frac1{12}\right)^2}=144\int_0^1(z-\frac1 2)^4dz=\frac9 5
 $$
 
 (2) 矩母函数
+
 $$
 M_X(t)=\int_0^{+\infty}e^{tx}e^{-x}dx=\frac1 {1-t},t<1\\
 M_Y(t)=E(e^{tY})=\sum_{k=0}^{+\infty}e^{tk}\frac{4^ke^{-4}}{k!}=e^{4(e^t-1)}\\
 M_Z(t)=\int_0^1e^{tz}dz=\frac{e^t -1}t
 $$
+
 (3) 对于任意连续随机变量 $X$，$M_X(t)=\int_{\mathbb{R}}e^{tx}f(x)dx$，于是 $M_X^{(k)}(t)=\int_{\mathbb{R}}x^ke^{tx}f(x)dx$，故 $M_X^{(k)}(0)=\int_{\mathbb{R}}x^kf(x)dx=E(x^k)$
+
 $$
 Var(X)=\int_{\mathbb{R}}(X-E(X))^2 f(x)dx=M_X^{(2)}(0)-(M_X^{(1)}(0))^2\\
 Skew(X)=\dfrac{E((X-\mu)^3)}{\sigma ^ 3}=\dfrac {M_X^{(3)}(0)-3M_X^{(1)}(0)M_X^{(2)}(0)+2(M_X^{(1)}(0))^3} {(M_X^{(2)}(0)-(M_X^{(1)}(0))^2)^{\frac 3 2}}\\
 Kurt(X)=\dfrac{E((X-\mu)^4)}{\sigma ^ 4}=\dfrac {M_X^{(4)}(0)-4M_X^{(1)}(0)M_X^{(3)}(0)+6(M_X^{(1)}(0))^2M_X^{(2)}(0)-3(M_X^{(1)}(0))^4} {(M_X^{(2)}(0)-(M_X^{(1)}(0))^2)^2}
 $$
+
 类似地，当 $X$ 为离散随机变量时，上述结论仍成立，于是
+
 $$
 Skew(X)=\dfrac{6-3\times1\times2+2\times1^3}{(2-1)^{\frac32}}=2\\
 Kurt(X)=\dfrac{24-4\times1\times6+6\times1^2\times2-3\times1^4}{(2-1)^2}=9\\
@@ -66,6 +73,7 @@ $$
 通过观察，$X$ 应为两个指数分布 $X_1,X_2$ 的线性组合，即 $X=\dfrac13X_1+\dfrac23X_2$，其中 $X_1\sim Exp(2)，X_2\sim Exp(3)$，且 $f(x)=\dfrac13(2e^{-2x})+\dfrac23(3e^{-3x})$。下面给出证明：
 
 首先，$\int_0^{+\infty}f(x)dx=\frac13\int_0^{+\infty}f_{X_1}(x_1)dx_1+\frac23\int_0^{+\infty}f_{X_2}(x_2)dx_2=\frac13+\frac23=1$，所以 $f(x)$ 是概率密度函数。于是我们有
+
 $$
 \begin{align}
 M_X(t)&=\int_0^{+\infty}e^{tx}\left[\dfrac13(2e^{-2x})+\dfrac23(3e^{-3x})\right]dx\\
@@ -74,14 +82,17 @@ M_X(t)&=\int_0^{+\infty}e^{tx}\left[\dfrac13(2e^{-2x})+\dfrac23(3e^{-3x})\right]
 &=\frac13\times\frac2{2-t}+\frac23\times\frac3{3-t}
 \end{align}
 $$
+
 因此，$X$ 的概率密度函数为 $f(x)=\dfrac23e^{-2x}+2e^{-3x}$
 
 #### Q4
 
 (1) 证明：当 $t>0$ 时，
+
 $$
 \lim_{y\rightarrow+\infty}M_Y(t)=\lim_{y\rightarrow+\infty}e^{ty}f_Y(y)=+\infty
 $$
+
 积分发散，因此对数正态分布的矩母函数不存在。
 
 (2) 对于 $X\sim N(\mu, \sigma^2)$，$M_X(t)=e^{\tfrac{\sigma^2t^2}2+\mu t}$，故 $Y$ 的 $n$ 阶原点矩 $E(Y^n)=E(e^{nX})=M_X(n)=e^{\tfrac{\sigma^2 n^2}2+\mu n}$
@@ -89,9 +100,11 @@ $$
 #### Q5
 
 由于 $X_1,X_2$ 相互独立，有
+
 $$
 M_Y(t)=M_{X_1}(t)M_{X_2}(t)=e^{\lambda_1(e^t-1)}e^{\lambda_2(e^t-1)}=e^{(\lambda_1+\lambda_2)(e^t-1)}
 $$
+
 因此 $Y\sim P(\lambda_1+\lambda_2)$
 
 #### Q6
@@ -105,9 +118,11 @@ $$
 #### Q7
 
 记走到安全之处的用时为随机变量 $X$，第 1 次选第 $Y$ 个门，根据条件期望公式，有
+
 $$
 E(X|Y=1)=2\\ E(X|Y=2)=3+E(X) \\ E(X|Y=3)=1+E(X)
 $$
+
 于是 $E(X)=\sum_{y=1}^3E(X|Y=y)P(Y=y)=\dfrac13(6+2E(X))$，解得 $E(X)=6$
 
 #### Q8
@@ -119,15 +134,18 @@ $$
 #### Q9
 
 (1) 证明：由于 $X,Y$ 独立，所以当 $Y$ 离散、连续时，分别有
+
 $$
 E(Y|X)=\sum_iy_iP(Y=y_i|X=x)=\sum_iy_iP(Y=y_i)=E(Y)\\
 E(Y|X)=\int_{\mathbb R}yf_{Y|X}(y|x)dy=\int_{\mathbb R}yf_Y(y)dy=E(Y)
 $$
+
 (2) 反之不一定成立。例如抛一枚硬币，记正面朝上的次数为 $X$，令 $Y=X$，则 $E(Y|X)=E(Y)=\dfrac12$，然而，$X,Y$ 不独立。
 
 #### Q10
 
 证明：
+
 $$
 \begin{align}
 Var(Y)&=E(Y^2)-E^2(Y)\\
@@ -138,6 +156,7 @@ Var(Y)&=E(Y^2)-E^2(Y)\\
 &=Var(\widetilde Y)+Var(\hat Y)
 \end{align}
 $$
+
 作为 $Y$ 的最优估计，$\widetilde Y$ 相比 $Y$ 更为集中，缩小了 $Y$ 的方差。但要想弥补这些差距，还需加上估计误差对应的方差。
 
 #### Q11
@@ -153,7 +172,9 @@ Var(Y|X)&=E[(Y-E(Y|X))^2|X]\\
 &=E(Y^2|X)-E^2(Y|X)
 \end{align}
 $$
+
 (2) 证明：
+
 $$
 \begin{align}
 Var(Y)&=E(Y^2)-E^2(Y)\\
@@ -176,6 +197,7 @@ $$
 #### Q13
 
 (1) 根据题意，有
+
 $$
 \begin{align}
 E[(Y-(aX+b)^2)]&=E(Y^2)-2aE(XY)+a^2E(X^2)+2abE(X)-2bE(Y)+b^2\\
@@ -183,6 +205,7 @@ E[(Y-(aX+b)^2)]&=E(Y^2)-2aE(XY)+a^2E(X^2)+2abE(X)-2bE(Y)+b^2\\
 &=(\mu_1^2+\sigma_1^2)a^2+2\mu_1ab+b^2-2(\mu_1\mu_2+\rho\sigma_1\sigma_2)a-2\mu_2b+\mu_2^2+\sigma_2^2
 \end{align}
 $$
+
 令 $g(a,b)=(\mu_1^2+\sigma_1^2)a^2+2\mu_1ab+b^2-2(\mu_1\mu_2+\rho\sigma_1\sigma_2)a-2\mu_2b+\mu_2^2+\sigma_2^2$
 
 令 $\left\{
@@ -200,17 +223,20 @@ b&=\mu_2-\rho \mu_1 \dfrac {\sigma_2}{\sigma_1}
 (2) 将 (1) 中的 $a,b$ 代入原式，得均方误差 $E[(Y-(aX+b)^2)]=\sigma_2^2(1-\rho^2)$，当 $\sigma_2^2\rightarrow 0$ 或 $\rho\rightarrow 1$，该值接近 0。
 
 (3) 
+
 $$
 \begin{align}
 E(Y|x)&=\int_{\mathbb R}yf_{Y|X}(y|x)dy=\mu_2+\rho\dfrac {\sigma_2}{\sigma_1}(x-\mu_1)\\
 E(Y|X)&=\mu_2+\rho\dfrac {\sigma_2}{\sigma_1}(X-\mu_1)
 \end{align}
 $$
+
 而 $Y$ 的最优线性预测 $\hat Y=aX+b=\rho\dfrac {\sigma_2}{\sigma_1}X+\mu_2-\rho\mu_1\dfrac {\sigma_2}{\sigma_1}=\mu_2+\rho\dfrac {\sigma_2}{\sigma_1}(X-\mu_1)$，刚好为 $E(Y|X)$。
 
 #### Q14
 
 (1)
+
 $$
 \begin{align}
 E(Y|n)&=E(X_1)+E(X_2)+\cdots+E(X_n)=\mu n\\
@@ -218,14 +244,19 @@ E(Y|N)&=\mu N\\
 E(Y)&=E(E(Y|N))=E(\mu N)=\mu a
 \end{align}
 $$
+
 (2)
+
 $$
 M_N(t)=E(e^{tN})=\sum_{n=1}^{+\infty}e^{tn}P(N=n)=\sum_{n=1}^{+\infty}e^{tn}p_n
 $$
+
 (3)
+
 $$
 M_Y(t)=E(e^{tY})=E(E(e^{tY}|N))=E(M_X^N(t))=\sum_{n=1}^{+\infty}M_X^n(t)p_n
 $$
+
 (4) 因为 $X_i\sim Exp(\lambda)$，所以 $M_X(t)=\dfrac{\lambda}{\lambda-t}$
 
 由 (2) (3) 可知 $M_Y(t)=\sum_{n=1}^{+\infty}M_X^n(t)p_n$，$M_N(t)=\sum_{n=1}^{+\infty}e^{tn}(1-p)^{n-1}p=\dfrac{pe^t}{1-(1-p)e^t}$

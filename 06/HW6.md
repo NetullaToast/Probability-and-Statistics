@@ -3,6 +3,7 @@
 #### Q1
 
 由于 $X_1,X_2$ 相互独立，我们有
+
 $$
 \begin{align}
 P(Y=k)&=P(X_1+X_2=k)\\
@@ -14,6 +15,7 @@ P(Y=k)&=P(X_1+X_2=k)\\
 &=\dfrac{\left(\lambda_1+\lambda_2\right)^ke^{-(\lambda_1+\lambda_2)}}{k!}
 \end{align}
 $$
+
 故 $Y\sim P(\lambda_1+\lambda_2)$
 
 设某段时间内，某路口因交通事故造成的男性伤亡数为 $X_1$，女性伤亡数为 $X_2$，总伤亡数为 $Y$，那么 $Y=X_1+X_2$。那么如果 $X_1,X_2$ 分别服从参数为 $\lambda_1,\lambda_2$ 的 poisson 分布，自然，$Y$ 就服从参数为 $\lambda_1+\lambda_2$ 的 poisson 分布。
@@ -21,6 +23,7 @@ $$
 #### Q2
 
 (1) 令 $Z=\dfrac{Y}{X},X=X$，则 $X=X,Y=ZX$。于是 $J=\det \left[\begin{array}{}1&0\\z&x\end{array}\right]=x$，所以 $(X,Z)$ 的 PDF 为 $f(x,zx)|J|=|x|f(x,zx)$，于是根据独立性和对称性，$Z$ 的概率密度函数为
+
 $$
 \begin{align}
 f_Z(z)&=\int_{\mathbb{R}}|x|f(x,zx)dx\\
@@ -30,31 +33,41 @@ f_Z(z)&=\int_{\mathbb{R}}|x|f(x,zx)dx\\
 &=\dfrac{1}{\pi}\dfrac{1}{z^2+1}
 \end{align}
 $$
+
 (2) $J=\det \left[\begin{array}{}\cos\Theta & -R\sin\Theta\\\sin \Theta & R\cos \Theta\end{array}\right]=R$，这里规定 $R\geq0$，则 $(R,\Theta)$ 的概率密度函数
+
 $$
 f_{R,\Theta}(r,\theta)=f(r\cos \theta,r\sin \theta)|J|=rf_X(r\cos \theta)f_Y(r\sin \theta)=\dfrac{r}{2\pi}e^{-\tfrac{1}{2}r^2}
 $$
+
 于是我们有
+
 $$
 f_R(r)=\int_{0}^{2\pi}f_{R,\Theta}(r,\theta)d\theta=re^{-\frac{1}{2}r^2},r\geq0\\
 f_\Theta(\theta)=\int_{0}^{+\infty}f_{R,\Theta}(r,\theta)dr=\dfrac{1}{2\pi},0\leq\theta<2\pi
 $$
+
 因此，$f_{R,\Theta}(r,\theta)=f_R(r)f_\Theta(\theta)$，所以 $R,\Theta $ 相互独立。
 
 (3) $X=\dfrac{1}{2}(U+V),Y=\dfrac{1}{2}(U-V)$。于是 $J=\det \left[\begin{array}{}\frac{1}{2}&\frac{1}{2}\\\frac{1}{2}&-\frac{1}{2}\end{array}\right]=-\frac{1}{2}$，故 $(U,V)$ 的概率密度函数
+
 $$
 f_{U,V}(u,v)=f(\dfrac{1}{2}(u+v),\dfrac{1}{2}(u-v))|J|=\dfrac{1}{2}f_X(\dfrac{1}{2}(u+v))f_Y(\dfrac{1}{2}(u-v))=\dfrac{1}{4\pi}e^{-\tfrac{1}{4}(u^2+v^2)}
 $$
+
 于是我们有
+
 $$
 f_U(u)=\int_{\mathbb{R}}f_{U,V}(u,v)dv=\dfrac{1}{2\sqrt\pi}e^{-\tfrac{1}{4}u^2}\\
 f_V(v)=\int_{\mathbb{R}}f_{U,V}(u,v)du=\dfrac{1}{2\sqrt\pi}e^{-\tfrac{1}{4}v^2}
 $$
+
 因此，$f_{U,V}(u,v)=f_U(u)f_V(v)$，所以 $U,V$ 相互独立。
 
 #### Q3
 
 根据独立性，我们有
+
 $$
 \begin{align}
 F_Y(y)&=P(\max \{X_1,\cdots,X_n\}\leq y)\\&=P(X_1\leq y)\cdots P(X_n\leq y)\\&=F^n(y)\\
@@ -105,16 +118,19 @@ C 马获胜概率 $p_C=\dfrac{1}{1+3.75}=\dfrac{4}{19}$
 #### Q7
 
 证明：
+
 $$
 \begin{align}
 E((X-c)^2)-Var(X)&=E((X-c)^2)-E((X-E(X))^2)\\&=E((X-c)^2-(X-E(X))^2)\\&=E((2E(X)-2c)X+c^2-E^2(X))\\&=(2E(X)-2c)E(X)+c^2-E^2(X)\\&=E^2(X)-2cE(X)+c^2\\&=(E(X)-c)^2\\&\geq 0
 \end{align}
 $$
+
 所以 $E((X-c)^2)\geq Var(X)$，等号成立当且仅当 $c=E(X)$
 
 #### Q8
 
 证明：当 $c<m$ 时，有
+
 $$
 \begin{align}
 E(|X-c|)-E(|X-m|)&=E(|X-c|-|X-m|)\\
@@ -125,9 +141,11 @@ E(|X-c|)-E(|X-m|)&=E(|X-c|-|X-m|)\\
 &=0
 \end{align}
 $$
+
 当 $c=m$ 时，结论显然成立。
 
 当 $c>m$ 时，有
+
 $$
 \begin{align}
 E(|X-c|)-E(|X-m|)&=E(|X-c|-|X-m|)\\
@@ -138,11 +156,13 @@ E(|X-c|)-E(|X-m|)&=E(|X-c|-|X-m|)\\
 &=0
 \end{align}
 $$
+
 综上，对于任意常数 $c$，不等式 $E(|X-c|)\geq E(|X-m|)$ 成立
 
 #### Q9
 
 设随机变量 $X>0$ 服从对数正态分布，即 $\log X=Y\sim N(\mu,\sigma^2)$，那么
+
 $$
 \begin{align}
 E(X)&=\int_{0}^{+\infty}xf_X(x)dx\\&=\int_{-\infty}^{+\infty}e^yf_Y(y)dy\\
@@ -160,6 +180,7 @@ $$
 #### Q10
 
 由于随机变量 $X_i$ 独立同分布，我们有
+
 $$
 Var(\overline{X})=Var(\dfrac{1}{n}\sum_{i=1}^{n}X_i)=\dfrac{1}{n^2}\sum_{i=1}^{n}Var(X_i)=\dfrac{\sigma^2}{n}\\
 E(S^2)=\dfrac{1}{n-1}E(\sum_{i=1}^n(X_i-\overline{X})^2)=\dfrac{1}{n-1}(\sum_{i=1}^nE(X_i^2)-nE(\overline{X}^2))=\dfrac{1}{n-1}(n(\sigma^2+\mu^2)-n(\dfrac{\sigma^2}{n}+\mu^2))=\sigma^2
@@ -180,10 +201,13 @@ $$
 #### Q12
 
 证明：若 $(X,Y)\sim N(\mu_1,\mu_2,\sigma_1,\sigma_2,\rho)$，则
+
 $$
 Corr(X,Y)=E(\dfrac{X-\mu_1}{\sigma_1}\dfrac{Y-\mu_2}{\sigma_2})=\iint_{\mathbb{R}^2}\dfrac{x-\mu_1}{\sigma_1}\dfrac{y-\mu_2}{\sigma_2}f(x,y)dxdy
 $$
+
 令 $s=\dfrac{x-\mu_1}{\sigma_1},t=\dfrac{x-\mu_2}{\sigma_2}$，则
+
 $$
 \begin{align}
 Corr(X,Y)&=\iint_{\mathbb{R}^2}\dfrac{1}{2\pi}\dfrac{1}{\sqrt{1-\rho^2}}e^{-\tfrac{1}{2(1-\rho^2)}(s^2+t^2-2\rho st)}st\ dsdt\\
@@ -195,10 +219,13 @@ $$
 #### Q13
 
 设 $X_i$ 为第 $i$ 个人是否拿到自己的帽子的随机变量，则 $P(X_i=1)=\dfrac{1}{n},P(X_i=0)=1-\dfrac{1}{n}$，且 $X=\sum_{i=1}^{n}X_i$，于是
+
 $$
 E(X)=\sum_{i=1}^{n}E(X_i)=\sum_{i=1}^{n}\dfrac{1}{n}=1
 $$
+
 而对于任意 $i\not=j$，$P(X_i=1,X_j=1)=P(X_i=1)P(X_j=1|X_i=1)=\dfrac{1}{n}\dfrac{1}{n-1}$，所以 $E(X_iX_j)=\dfrac{1}{n(n-1)}$，所以 $Cov(X_i,X_j)=E(X_iX_j)-E(X_i)E(X_j)=\dfrac{1}{n(n-1)}-\dfrac{1}{n^2}=\dfrac{1}{n^2(n-1)}$，故
+
 $$
 Var(X)=Var(\sum_{i=1}^{n}X_i)=\sum_{i=1}^{n}Var(X_i)+2\sum_{i\not=j}Cov(X_i,X_j)=n(\dfrac{1}{n}-\dfrac{1}{n^2})+n(n-1)\dfrac{1}{n^2(n-1)}=1
 $$
@@ -208,14 +235,17 @@ $$
 (1) 证明：$\forall t\in \mathbb{R},E\left[(U-tV)^2\right]=E(U^2)-2tE(UV)+t^2E(V^2)\geq0$，这是关于 $t$ 的二次函数，因此根的判别式 $\Delta=4E^2(UV)-4E(V^2)E(U^2)\leq 0$，即 $E^2(UV)\leq E(U^2)E(V^2)$。等号成立当且仅当 $E\left[(U-tV)^2\right]=0$，而 $(U-tV)^2\geq 0$，所以 $\exist c\in \mathbb{R},P(V=cU)=1$。
 
 (2) 证明：
+
 $$
 |Corr(X,Y)|=\dfrac{1}{\sigma_1\sigma_2}|E((X-\mu_1)(Y-\mu_2))|\leq \dfrac{1}{\sigma_1\sigma_2}\sqrt{E\left[(X-\mu_1)^2\right]E\left[(Y-\mu_2)^2\right]}={\sigma_1\sigma_2}\sqrt{\sigma_1^2\sigma_2^2}=1
 $$
+
 等号成立当且仅当存在常数 $c$，使得 $P(X-\mu_1=c(Y-\mu_2))$，即存在 $a,b$，使得 $P(Y=aX+b)=1$。
 
 #### Q15
 
 (1) 证明：因为 $X_i$ 独立同分布，所以
+
 $$
 \begin{align}
 Cov(X_i-\overline{X},\overline{X})
@@ -226,6 +256,7 @@ Cov(X_i-\overline{X},\overline{X})
 &=0
 \end{align}
 $$
+
 (2) 不一定。假设 $X_i\sim B(\dfrac{1}{2})$，则 $P(X_i-\overline{X}=0,\overline{X}=1)=\left(\dfrac{1}{2}\right)^n$，而 $P(X_i-\overline{X}=0)P(\overline{X}=1)=2\times\left(\dfrac{1}{2}\right)^n\times\left(\dfrac{1}{2}\right)^n=\left(\dfrac{1}{2}\right)^{2n-1}$，两者不相等，故 $X_i-\overline{X}$ 与 $\overline{X}$ 不一定独立。
 
 #### Q16
